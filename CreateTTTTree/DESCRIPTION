@@ -1,0 +1,13 @@
+Package: CreateTTTTree
+Type: Package
+Title: Creates a tree for a tic tac toe game
+Version: 0.1.0
+Author: Paul Kristoff
+Maintainer: The package maintainer <yourself@somewhere.net>
+Description: 'nnn'
+License: What license is it under?
+Encoding: UTF-8
+LazyData: true
+Imports: data.tree
+Exports: CreateDataSetTTT, TTTTree
+Suggests: testthat
