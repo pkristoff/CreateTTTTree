@@ -9,5 +9,5 @@ License: What license is it under?
 Encoding: UTF-8
 LazyData: true
 Imports: data.tree
-Exports: CreateDataSetTTT, TTTTree
 Suggests: testthat
+RoxygenNote: 6.0.1

@@ -29,19 +29,10 @@ library(data.tree)
 #'
 #' @return A data.tree representing all the potential moves in a tic-tac-toe game
 #' @examples
-#' CreateDataSetTTT(1, 1)
-CreateDataSetTTT <- function () {
-  #' Now we traverse the tree recursively, and add possible moves to the leaves along the way,
-  #' growing it to eventually hold all possible games. To do this, we define a method which,
-  #' based on a Node’s path, adds possible moves as children.
-  #'
-  #' @param node A data.tree node
-  #'
-  #' @return \code{node} with all its children filled in
-  #'
-  #' @examples
-  #' AddPossibleMoves(node)
-  #'
+#' CreateDataSetTTT()
+#' @export
+CreateDataSetTTT <- function() {
+
   AddPossibleMoves <- function(node) {
     t <- Traverse(node, traversal = "ancestor", filterFun = isNotRoot)
     available <-
@@ -85,16 +76,6 @@ CreateDataSetTTT <- function () {
     return (node)
   }
 
-  #'
-  #' Our algorithm stops whenever either player has won, or when all 9 fields are taken.
-  #' Whether a player has won is determined by this function:
-  #'
-  #' @param node A data.tree node
-  #'
-  #' @return whether the node represents a winning game.
-  #' @examples
-  #' HasWon(node)
-  #'
   HasWon <- function(node) {
     t <-
       Traverse(
@@ -113,16 +94,7 @@ CreateDataSetTTT <- function () {
       sum(diag(t(mineM))) == 3
     return (result)
   }
-  #'
-  #' Prints a board representation of the node
-  #'
-  #' @param node A data.tree node
-  #'
-  #' @return whether the node represents a winning game.
-  #'
-  #' @examples
-  #' PrintBoard(node)
-  #'
+
   PrintBoard <- function(node) {
     mineV <- rep(0, 9)
 
@@ -213,6 +185,13 @@ CreateDataSetTTT <- function () {
 
 }
 
+#' create tree structure
+#'
+#' @return Node: top of generated tree.
+#'
+#' @examples
+#' TTTTree()
+#' @export
 TTTTree <- function() {
   print(system.time(ttt <- CreateDataSetTTT()))
   ttt
